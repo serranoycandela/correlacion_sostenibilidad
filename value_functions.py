@@ -10,6 +10,8 @@ def discrete_factor(category, argument):
     
     assert category in factor.keys()
 
-    return argument * factor[category]
+    def f(argument):
+        return factor[category] * argument
 
+    return f
     
