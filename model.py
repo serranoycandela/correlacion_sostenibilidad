@@ -5,7 +5,8 @@ class CriteriaVector:
         self.matrix = matrix
 
     def update(self, variable, delta):
-        """ updates variables vector when delta applied to single variable
+        """
+        updates whole variables vector when delta applied to single variable
 
         :param variable: index for self.variables list, to be modified by delta
         :param delta: rate of change for criterion
@@ -14,16 +15,11 @@ class CriteriaVector:
             # if matrix is a dicit variable must be the key
             assert variable in self.matrix
 
-            self.variables = [self.matrix[variable](v + delta)
-                              for v in self.variables]
-        else:
-            # if matrix is a list variable is an index
-            for i in range(len(self.variables)):
-                if self.matrix[variable][i] is None:
-                    self.variables[i] += delta
-                else:
-                    self.variables[i] += \
-                        self.matrix[variable][i](delta)
+        for i in range(len(self.variables)):
+            if self.matrix[variable][i] is None:
+                self.variables[i] += delta
+            else:
+                self.variables[i] += self.matrix[variable][i](delta)
 
     def hist(self):
         """
