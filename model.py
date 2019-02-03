@@ -16,10 +16,13 @@ class CriteriaVector:
             assert variable in self.matrix
 
         for i in range(len(self.variables)):
-            if self.matrix[variable][i] is None:
+            if i == variable:  # TODO: write dict condition
                 self.variables[i] += delta
+            elif self.matrix[variable][i] is None:
+                pass
             else:
-                self.variables[i] += self.matrix[variable][i](delta)
+                self.variables[i] += self.matrix[variable][i](delta)                
+
 
     def hist(self):
         """

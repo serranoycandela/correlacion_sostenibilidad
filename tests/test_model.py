@@ -20,7 +20,7 @@ def test_update_with_list():
 
     v.update(0, delta=1)
 
-    assert v.variables == [2, 1.2, 1.6, 1.8, 2, 2.2, 2.4, 2.8]
+    assert v.variables == [2, -0.8, -0.3999999999999999, -0.19999999999999996, 2, 2.2, 2.4, 2.8]
 
 
 matrix_dict = {
@@ -49,7 +49,8 @@ def test_update_with_dict():
 
     v.update('key7', delta=1)
 
-    assert v.variables == [1.2, 1.6, 1.8, 2, 2.2, 2.4, 2.8, 2]
+    assert v.variables ==  [-0.8, -0.3999999999999999, -0.19999999999999996, 2, 2.2, 2.4, 2.8, 1]
+
 
 
 mixed_func_matrix = [
@@ -79,5 +80,6 @@ def test_update_with_other_value_function():
     # test discrete factor again
     v.variables = [1, 1, 1, 1, 1, 1, 1, 1]
     v.update(0, delta=1)
-    assert v.variables == [2, 1.2, 1.6, 1.8, 2, 2.2, 2.4, 2.8]
+    assert v.variables == [2, -0.8, -0.3999999999999999, -0.19999999999999996, 2, 2.2, 2.4, 2.8]
+
     

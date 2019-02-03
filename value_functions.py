@@ -4,9 +4,9 @@ def discrete_factor(category):
               '++': 1.4,
               '+++': 1.8,
               0: 1,
-              '-': 0.8,
-              '--': 0.6,
-              '---': 0.2}
+              '-': -1.2,
+              '--': -1.4,
+              '---': -1.8}
 
     assert category in factor.keys()
 
