@@ -73,4 +73,11 @@ def test_update_with_other_value_function():
 
     v.update(1, delta=2)
 
+    # test square value function
     assert v.variables == [5, 3, 5, 5, 5, 5, 5, 5]
+
+    # test discrete factor again
+    v.variables = [1, 1, 1, 1, 1, 1, 1, 1]
+    v.update(0, delta=1)
+    assert v.variables == [2, 1.2, 1.6, 1.8, 2, 2.2, 2.4, 2.8]
+    
