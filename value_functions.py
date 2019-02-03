@@ -15,3 +15,8 @@ def discrete_factor(category):
 
     return f
     
+
+def square():
+    def f(argument):
+        return argument * argument
+    return f
