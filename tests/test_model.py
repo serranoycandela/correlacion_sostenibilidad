@@ -1,11 +1,14 @@
+# coding: utf-8
+
 from value_functions import discrete_factor as f
+from model import CriteriaVector
 
 matrix_list = [
     [None,     f('+++'), f('++'),  f('+'),   f('+++'), f('+++'), f('+'),   f('++'),  f('+++'), f('+'),   f('+++'), f('+'),   f(0),     f(0),     f(0),     f('+'),   f('+'),   f('+'),   f('+++'), None,     None    ],
     [f('++'),  None,     f(0),     f('+'),   f(0),     f('+++'), f('+'),   f('+'),   f('+'),   f('++'),  f('+'),   f('+++'), f(0),     f(0),     f('+'),   f(0),     f(0),     f('+'),   f('++'),  f('+'),   f('++') ],
     [f('+'),   f('++'),  None,     f('++'),  f('++'),  f('+++'), f(0),     f(0),     f('++'),  f('+++'), f(0),     f('++'),  f('+'),   f(0),     f('+'),   f('+'),   f(0),     f('++'),  f('+++'), f('+'),   f('++') ],
     [f('+'),   f('+'),   f('+++'), None,     f('+'),   f('+++'), f('+'),   f('+'),   f('+++'), f('+++'), f('+'),   f('+'),   f('+'),   f(0),     f('+'),   f(0),     f(0),     f(0),     f('++'),  f('+'),   f('+')  ],
-    [f('+++'), , f(0),   f(0),     f('+'),   None,     f('+++'), f('+'),   f('+'),   f('+++'), f('+++'), f('+'),   f('++'),  f(0),     f(0),     f('+'),   f('+'),   f(0),     f('+'),   f('++'),  f('++'),  f('+++')],
+    [f('+++'), f(0),     f(0),     f('+'),   None,     f('+++'), f('+'),   f('+'),   f('+++'), f('+++'), f('+'),   f('++'),  f(0),     f(0),     f('+'),   f('+'),   f(0),     f('+'),   f('++'),  f('++'),  f('+++')],
     [f('+'),   f('+++'), f('+++'), f('+++'), f('+++'), None,     f('+'),   f(0),     f('+++'), f('++'),  f('+'),   f(0),     f(0),     f(0),     f('+'),   f(0),     f(0),     f(0),     f('--'),  f('++'),  f('+++')],
     [f('++'),  f('+'),   f(0),     f('+'),   f(0),     f(0),     None,     f('+++'), f(0),     f(0),     f('+++'), f('+'),   f(0),     f(0),     f('+'),   f('+'),   f(0),     f('+'),   f('+'),   f('+++'), f('+')  ],
     [f('++'),  f('+'),   f(0),     f(0),     f(0),     f(0),     f(0),     None,     f('++'),  f(0),     f('+++'), f('+'),   f(0),     f(0),     f('+'),   f('+'),   f(0),     f('+'),   f('++'),  f('+++'), f('+')  ],
@@ -15,7 +18,7 @@ matrix_list = [
     [f(0),     f('++'),  f('+'),   f('+'),   f('+'),   f('+++'), f('+'),   f('+'),   f(0),     f(0),     f('+++'), None,     f(0),     f(0),     f('+'),   f('+++'), f(0),     f('+'),   f('+++'), f('+'),   f(0)    ],
     [f('+++'), f('+++'), f('+++'), f('+++'), f('+++'), f('+++'), f('+++'), f('+++'), f('+++'), f('+++'), f('+++'), f('++'),  None,     f(0),     f('+++'), f(0),     f(0),     f('+++'), f('+++'), f('+++'), f('+++')],
     [f('+'),   f('+++'), f('+'),   f('++'),  f('+++'), f('+++'), f('+++'), f('+++'), f('+++'), f('+++'), f('+++'), f('+'),   f('+'),   None,     f('+++'), f('+'),   f(0),     f('+++'), f('++'),  f('+++'), f('+')  ],
-    [None,     f(0),     f(0),     f(0),     f(0),     f(0),     f('+'),   f('+'),   f(0),     f(0),     f('+'),   f('+++'), f('+'),   f(0),     None,     f('+++'), f('+'),   f('+'),   f('+++'), f('+++') f('++')  ],  # aguas! dudas aqui
+    [None,     f(0),     f(0),     f(0),     f(0),     f(0),     f('+'),   f('+'),   f(0),     f(0),     f('+'),   f('+++'), f('+'),   f(0),     None,     f('+++'), f('+'),   f('+'),   f('+++'), f('+++'), f('++') ],  # aguas! dudas aqui
     [f('+'),   f(0),     f(0),     f(0),     f(0),     f(0),     f(0),     f(0),     f(0),     f(0),     f('+++'), f('+'),   f('+'),   f('++'),  f('+++'), None,     f('+++'), f('++'),  f('+++'), f('++'),  f(0)    ],
     [f('++'),  f(0),     f(0),     f('+'),   f(0),     f(0),     f(0),     f(0),     f(0),     f(0),     f('+'),   f('++'),  f('++'),  f('+'),   f(0),     f('+'),   None,     f(0),     f('++'),  f('+++'), f(0)    ],
     [f('++'),  f('++'),  f('++'),  f('++'),  f('++'),  f('++'),  f('++'),  f('+'),   f(0),     f('++'),  f('+++'), f('+++'), f(0),     f('+'),   f('+++'), f('+++'), f(0),     None,     f('+++'), f('+++'), f(0)    ],
@@ -34,7 +37,7 @@ matrix_dict = {
     "Acciones para una industria limpia (producción y circulación sustentable y responsabilidad extendida)":
     [f('+'),   f('+'),   f('+++'), None,     f('+'),   f('+++'), f('+'),   f('+'),   f('+++'), f('+++'), f('+'),   f('+'),   f('+'),   f(0),     f('+'),   f(0),     f(0),     f(0),     f('++'),  f('+'),   f('+')  ],
     "Movilidad sustentable (masiva, pública y crecientemente no motorizada, además de la regulación del transporte de carga)":
-    [f('+++'), , f(0),   f(0),     f('+'),   None,     f('+++'), f('+'),   f('+'),   f('+++'), f('+++'), f('+'),   f('++'),  f(0),     f(0),     f('+'),   f('+'),   f(0),     f('+'),   f('++'),  f('++'),  f('+++')],
+    [f('+++'), f(0),     f(0),     f('+'),   None,     f('+++'), f('+'),   f('+'),   f('+++'), f('+++'), f('+'),   f('++'),  f(0),     f(0),     f('+'),   f('+'),   f(0),     f('+'),   f('++'),  f('++'),  f('+++')],
     "Eficiencia energética y fomento a las energías renovables ":
     [f('+'),   f('+++'), f('+++'), f('+++'), f('+++'), None,     f('+'),   f(0),     f('+++'), f('++'),  f('+'),   f(0),     f(0),     f(0),     f('+'),   f(0),     f(0),     f(0),     f('--'),  f('++'),  f('+++')],
     "Infraestructura verde-azul para la adaptación al cambio climático":
@@ -54,7 +57,7 @@ matrix_dict = {
     "Existencia de un presupuesto climático y seguros contra riesgos hidro-meteorológicos":
     [f('+'),   f('+++'), f('+'),   f('++'),  f('+++'), f('+++'), f('+++'), f('+++'), f('+++'), f('+++'), f('+++'), f('+'),   f('+'),   None,     f('+++'), f('+'),   f(0),     f('+++'), f('++'),  f('+++'), f('+')  ],
     "Acciones de educación para el cambio climático y difusión para la sustentabilidad":
-    [None,     f(0),     f(0),     f(0),     f(0),     f(0),     f('+'),   f('+'),   f(0),     f(0),     f('+'),   f('+++'), f('+'),   f(0),     None,     f('+++'), f('+'),   f('+'),   f('+++'), f('+++') f('++')  ],  # aguas! dudas, en duda
+    [None,     f(0),     f(0),     f(0),     f(0),     f(0),     f('+'),   f('+'),   f(0),     f(0),     f('+'),   f('+++'), f('+'),   f(0),     None,     f('+++'), f('+'),   f('+'),   f('+++'), f('+++'), f('++') ],  # aguas! dudas, en duda
     "Aumento en la participación social en el avance hacia la sustentabilidad, incluyente y justa":
     [f('+'),   f(0),     f(0),     f(0),     f(0),     f(0),     f(0),     f(0),     f(0),     f(0),     f('+++'), f('+'),   f('+'),   f('++'),  f('+++'), None,     f('+++'), f('++'),  f('+++'), f('++'),  f(0)    ],
     "Combate a la corrupción / aumento de la rendición de cuentas":
@@ -63,17 +66,37 @@ matrix_dict = {
     [f('++'),  f('++'),  f('++'),  f('++'),  f('++'),  f('++'),  f('++'),  f('+'),   f(0),     f('++'),  f('+++'), f('+++'), f(0),     f('+'),   f('+++'), f('+++'), f(0),     None,     f('+++'), f('+++'), f(0)    ],
     "Mejora de la resiliencia urbana (biofísica y social del espacio urbano)":
     [f('+++'), f('++'),  f('+'),   f('+'),   f('++'),  f('--'),  f('++'),  f('+++'), f(0),     f('++'),  f('+++'), f('++'),  f(0),     f(0),     f('+'),   f('+'),   f(0),     f('+'),   None,     f('++'),  f(0)    ],
-    "Fortalecimiento de la gobernanza del cambio climático"
+    "Fortalecimiento de la gobernanza del cambio climático":
     [f('+++'), f(0),     f('+++'), f('+'),   f('++'),  f('+++'), f('+++'), f('+++'), f('+++'), f(0),     f('+++'), f('++'),  f('+++'), f('+++'), f('+++'), f('+++'), f('+++'), f('+++'), f('+++'), None,     f(0)    ],
     "Salud":
     [f(0),     f(0),     f(0),     f(0),     f(0),     f(0),     f(0),     f(0),     f(0),     f(0),     f(0),     f('+++'), f(0),     f(0),     f('+'),   f('++'),  f(0),     f('+'),   f('+++'), f(0),     None    ]
 }
 
 
+v = CriteriaVector([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                   matrix_list)
 
-def test_update:
-    v = CriteriaVector([.1,.3,.....],
-                       matrix)
-    v.update(criterion=1, delta=3)
-    assert v.criteria == []
+def test_update():
+    v.update(0, delta=1)
+    assert v.variables == [2,
+                           2.8,
+                           2.4,
+                           2.2,
+                           2.8,
+                           2.8,
+                           2.2,
+                           2.4,
+                           2.8,
+                           2.2,
+                           2.8,
+                           2.2,
+                           2,
+                           2,
+                           2,
+                           2.2,
+                           2.2,
+                           2.2,
+                           2.8,
+                           2,
+                           2]
 
