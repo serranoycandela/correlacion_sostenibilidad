@@ -1,13 +1,23 @@
-matriz_c = [[++,+++,-...],
-            [++,+++,-...]
-            ..
-            ]
+class CriteriaVector:
 
-v = Vector([.1,.3,.....], matriz_c)
+    def __init__(self, criteria, matrix):
+        self.criteria = criteria
+        self.matrix = matrix
 
+    def update(self, criterion, delta):
+        """ updates criteria vector when delta applied to criterion
 
-v.update(criterio = 1, delta = 3)
+        :param criterion: index for self.criteria list, to be modified by delta
+        :param delta: rate of change for criterion
+        """
 
-v.hist()
+    def hist(self):
+        """
+        plot matplotlib histogram
+        :returns: fig?
+        """
 
-v.glyph()
+    def glyph(self):
+        """
+        plots hier-o-glyph from criteria vector
+        """
