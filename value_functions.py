@@ -11,7 +11,10 @@ def discrete_factor(category):
     assert category in factor.keys()
 
     def f(delta, curr_value):
-        return factor[category] * (100-curr_value) * delta / 100
+        if delta * factor[category] > 0:
+            return factor[category] * (100-curr_value) * delta / 100
+        else:
+            return factor[category] * (curr_value) * delta / 100
 
     return f
 
