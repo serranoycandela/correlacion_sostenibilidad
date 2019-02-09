@@ -21,7 +21,7 @@ class CriteriaVector:
             elif self.matrix[variable][i] is None:
                 pass
             else:
-                self.variables[i] += self.matrix[variable][i](delta)                
+                self.variables[i] += self.matrix[variable][i](delta, self.variables[i])                
 
 
     def hist(self):

@@ -1,20 +1,20 @@
 
 def discrete_factor(category):
-    factor = {'+': 1.2,
-              '++': 1.4,
-              '+++': 1.8,
-              0: 1,
-              '-': -1.2,
-              '--': -1.4,
-              '---': -1.8}
+    factor = {'+': 0.33,
+              '++': 0.66,
+              '+++': 0.99,
+              0: 0,
+              '-': -0.33,
+              '--': -0.66,
+              '---': -0.99}
 
     assert category in factor.keys()
 
-    def f(argument):
-        return factor[category] * argument
+    def f(delta, curr_value):
+        return factor[category] * (100-curr_value) * delta / 100
 
     return f
-    
+
 
 def square():
     def f(argument):

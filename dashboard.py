@@ -23,17 +23,17 @@ class MainWindow(QMainWindow):
         layout.addWidget(static_canvas)
         self._static_ax = static_canvas.figure.subplots()
 
-        self.v = CriteriaVector(list(np.random.rand(1,21)[0]),
+        self.v = CriteriaVector([n * 100 for n in list(np.random.rand(1,21)[0])],
                            matrix_list)
 
         # setup ranges for sliders, connect them
         for id in range(1, 22):
             slider = getattr(self.ui, 'verticalSlider_%d' % id)
             slider.setMinimum(0)
-            slider.setMaximum(10)
-            slider.setTickInterval(1)
+            slider.setMaximum(100)
+            slider.setTickInterval(5)
             slider.setSingleStep(1)
-            slider.setValue(5)
+            slider.setValue(50)
             slider.sliderReleased.connect(
                 lambda id=str(id): self.update(id))
 
@@ -43,7 +43,7 @@ class MainWindow(QMainWindow):
     def update_sliders(self):
         for id in range(1,22):
             slider = getattr(self.ui, 'verticalSlider_%d' % id)
-            slider.setValue(self.v.variables[id-1]*10)
+            slider.setValue(self.v.variables[id-1])
 
     def update_pc(self):
         # df = pd.DataFrame(self.v.variables,
@@ -57,8 +57,8 @@ class MainWindow(QMainWindow):
 
         slider = getattr(self.ui, 'verticalSlider_%s' % id)
         id = int(id)-1
-        old_value = 10*self.v.variables[id]
-        self.v.update(id, delta=(slider.value()-old_value)/10 )
+        old_value = self.v.variables[id]
+        self.v.update(id, delta=(slider.value()-old_value) )
         self.update_sliders()
         self.update_pc()
         print(old_value, str(slider.value()))
