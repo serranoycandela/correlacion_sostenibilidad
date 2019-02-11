@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1413</width>
+    <width>1353</width>
     <height>792</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Sostenibilidad Urbana</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
@@ -19,8 +19,8 @@
      <rect>
       <x>810</x>
       <y>540</y>
-      <width>581</width>
-      <height>171</height>
+      <width>521</width>
+      <height>200</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -34,8 +34,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>581</width>
-       <height>171</height>
+       <width>521</width>
+       <height>200</height>
       </rect>
      </property>
     </widget>
@@ -45,7 +45,7 @@
      <rect>
       <x>810</x>
       <y>10</y>
-      <width>581</width>
+      <width>521</width>
       <height>521</height>
      </rect>
     </property>
@@ -55,7 +55,7 @@
      <rect>
       <x>10</x>
       <y>570</y>
-      <width>71</width>
+      <width>81</width>
       <height>151</height>
      </rect>
     </property>
@@ -66,9 +66,9 @@
    <widget class="QLabel" name="social">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>460</y>
-      <width>81</width>
+      <width>91</width>
       <height>101</height>
      </rect>
     </property>
@@ -79,7 +79,7 @@
    <widget class="QLabel" name="econo">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>20</x>
       <y>340</y>
       <width>71</width>
       <height>111</height>
@@ -92,14 +92,14 @@
    <widget class="QLabel" name="ecolo">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>30</x>
       <y>110</y>
       <width>61</width>
       <height>141</height>
      </rect>
     </property>
     <property name="text">
-     <string>Ecologica</string>
+     <string>Ecológica</string>
     </property>
    </widget>
    <widget class="QWidget" name="">
@@ -299,9 +299,9 @@
    <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>110</x>
       <y>10</y>
-      <width>511</width>
+      <width>491</width>
       <height>731</height>
      </rect>
     </property>
@@ -496,7 +496,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1413</width>
+     <width>1353</width>
      <height>22</height>
     </rect>
    </property>

@@ -1,7 +1,7 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog,QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog,QVBoxLayout, QWidget, QLabel
 from PyQt5.QtGui import QPainter
-from PyQt5.QtCore import QFile, QUrl
+from PyQt5.QtCore import QFile, QUrl, QRect
 from PyQt5.QtCore import Qt
 
 from gui import Ui_MainWindow
@@ -19,14 +19,15 @@ from PyQt5.QtWebEngineWidgets import QWebEngineView
 #import matplotlib.pyplot as plt
 
 
-class MyLabel(QWidget):
-    def __init__(self, text=None):
+class MyLabel(QLabel):
+    def __init__(self, text=None, parent=None):
         super(self.__class__, self).__init__()
         self.text = text
+        self.parent = parent
 
     def paintEvent(self, event):
         painter = QPainter(self)
-        painter.setPen(Qt.black)
+        painter.setPen(Qt.white)
         painter.translate(20, 100)
         painter.rotate(-90)
         if self.text:
@@ -39,9 +40,10 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         layout = QVBoxLayout(self.ui.frame)
-        static_canvas = FigureCanvas(Figure(figsize=(5, 3)))
+        static_canvas = FigureCanvas(Figure(figsize=(8, 3)))
 
         layout.addWidget(static_canvas)
+        static_canvas.figure.subplots_adjust(left=0.07, right=0.99, top=0.9, bottom=0.1)
         self._static_ax = static_canvas.figure.subplots()
 
         self.v = CriteriaVector([n * 100 for n in list(np.random.rand(1,21)[0])],
@@ -68,9 +70,9 @@ class MainWindow(QMainWindow):
         self.view.setGeometry(0,0,520,520)
         self.update_glyph()
         self.view.show()
-        self.economica = MyLabel("Económica")
-        self.economica.setGeometry(20,300,30,400)
-        self.economica.show()
+        # self.economica = MyLabel(text="Económica",parent=self.ui.centralwidget)
+        # self.economica.setGeometry(QRect(20,300,30,400))
+        # self.economica.show()
 
 
     def update_sliders(self):
@@ -82,10 +84,22 @@ class MainWindow(QMainWindow):
         # df = pd.DataFrame(self.v.variables,
         #                   columns=["values"])
         # parallel_coordinates(df, '0', ax=self._static_ax)
+        print(old_values)
+        print(self.v.variables)
         self._static_ax.clear()
-        self._static_ax.plot( range(21), self.v.variables)
-        #self._static_ax.plot( range(21), old_values)
+        xcoords = [10.5, 13.5, 16.5]
+        for xc in xcoords:
+            self._static_ax.axvline(x=xc, color="lightgray")
+        self._static_ax.plot( range(21), old_values, "gainsboro")
+        self._static_ax.plot( range(21), self.v.variables, "green")
+        self._static_ax.text(3, 105, "Ecológica", fontsize=8)
+        self._static_ax.text(10.5, 105, "Económica", fontsize=8)
+        self._static_ax.text(14, 105, "Social", fontsize=8)
+        self._static_ax.text(16.5, 105, "Gobernanza", fontsize=8)
         self._static_ax.set_ylim(bottom=0, top=100)
+        self._static_ax.set_xticklabels([])
+        self._static_ax.xaxis.set_ticks(np.arange(0, 21, 1.0))
+
         self._static_ax.figure.canvas.draw()
 
     def vector2dict(self):
@@ -136,7 +150,7 @@ class MainWindow(QMainWindow):
 
         slider = getattr(self.ui, 'slider_%s' % id)
         id = int(id)
-        old_values = self.v.variables
+        old_values = self.v.variables[:]
         old_value = self.v.variables[id]
         self.v.update(id, delta=(slider.value()-old_value) )
         self.update_sliders()
