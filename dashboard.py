@@ -8,9 +8,19 @@ from gui import Ui_MainWindow
 #/Applications/QGIS3.app/Contents/MacOS/bin/pyuic4 gui.ui -o gui.py
 from matplotlib.backends.backend_qt5agg import FigureCanvas
 from matplotlib.figure import Figure
+
+import matplotlib
+
+matplotlib.use('Agg')
+from matplotlib.colors import LinearSegmentedColormap
+
+from palettable.colorbrewer.sequential import YlGn_6
+from palettable.colorbrewer.diverging import RdYlGn_11
+from palettable.cmocean.sequential import Thermal_13
 from value_functions import discrete_factor as f
 from model import CriteriaVector
 import numpy as np
+
 import pandas as pd
 from pandas.plotting import parallel_coordinates
 import glyph_writer as gw
@@ -45,7 +55,8 @@ class MainWindow(QMainWindow):
         layout.addWidget(static_canvas)
         static_canvas.figure.subplots_adjust(left=0.07, right=0.99, top=0.9, bottom=0.1)
         self._static_ax = static_canvas.figure.subplots()
-
+        colors = [(1, 0, 0), (0.8, 0.8, 0), (0, 0.5, 0)]  # R -> Y -> G
+        self.palette = LinearSegmentedColormap.from_list("semaforo", colors, N=255)
         self.v = CriteriaVector([n * 100 for n in list(np.random.rand(1,21)[0])],
                            matrix_list2)
 
@@ -87,14 +98,14 @@ class MainWindow(QMainWindow):
         print(old_values)
         print(self.v.variables)
         self._static_ax.clear()
-        xcoords = [10.5, 13.5, 16.5]
+        xcoords = [9.5, 12.5, 15.5]
         for xc in xcoords:
             self._static_ax.axvline(x=xc, color="lightgray")
         self._static_ax.plot( range(21), old_values, "gainsboro")
         self._static_ax.plot( range(21), self.v.variables, "green")
         self._static_ax.text(3, 105, "Ecológica", fontsize=8)
-        self._static_ax.text(10.5, 105, "Económica", fontsize=8)
-        self._static_ax.text(14, 105, "Social", fontsize=8)
+        self._static_ax.text(9.5, 105, "Económica", fontsize=8)
+        self._static_ax.text(13, 105, "Social", fontsize=8)
         self._static_ax.text(16.5, 105, "Gobernanza", fontsize=8)
         self._static_ax.set_ylim(bottom=0, top=100)
         self._static_ax.set_xticklabels([])
@@ -138,8 +149,7 @@ class MainWindow(QMainWindow):
         #print(gw.makeGlyph(800, data1, labels=True, toEnsableLabelsLater=True))
         #svg_bytes = bytearray(gw.makeGlyph(520, data1, labels=True, toEnsableLabelsLater=True), encoding='utf-8')
 
-
-        self.view.setHtml(gw.makeBarGlyph(500, data1, labels=True, toEnsableLabelsLater=True))
+        self.view.setHtml(gw.makeBarGlyph(500, data1, labels=True, toEnsableLabelsLater=True,palette=self.palette))
 
 
         #self.svgWidget.renderer().load(svg_bytes)
