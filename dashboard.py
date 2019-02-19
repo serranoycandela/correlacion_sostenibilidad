@@ -90,6 +90,8 @@ class MainWindow(QMainWindow):
         for id in range(0,21):
             slider = getattr(self.ui, 'slider_%d' % id)
             slider.setValue(self.v.variables[id])
+            lcd = getattr(self.ui, 'lcdNumber_%d' % id)
+            lcd.display(int(self.v.variables[id]))
 
     def update_pc(self,old_values):
         # df = pd.DataFrame(self.v.variables,
