@@ -11,12 +11,9 @@ from matplotlib.figure import Figure
 
 import matplotlib
 
-matplotlib.use('Agg')
+matplotlib.use('Qt5Agg')
 from matplotlib.colors import LinearSegmentedColormap
 
-from palettable.colorbrewer.sequential import YlGn_6
-from palettable.colorbrewer.diverging import RdYlGn_11
-from palettable.cmocean.sequential import Thermal_13
 from value_functions import discrete_factor as f
 from model import CriteriaVector
 import numpy as np
@@ -24,7 +21,7 @@ import numpy as np
 import pandas as pd
 from pandas.plotting import parallel_coordinates
 import glyph_writer as gw
-from matrices import matrix_list2, subcats2
+from matrices import matrix_list3, subcats3
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 #import matplotlib.pyplot as plt
 
@@ -58,7 +55,7 @@ class MainWindow(QMainWindow):
         colors = [(1, 0, 0), (0.8, 0.8, 0), (0, 0.5, 0)]  # R -> Y -> G
         self.palette = LinearSegmentedColormap.from_list("semaforo", colors, N=255)
         self.v = CriteriaVector([n * 100 for n in list(np.random.rand(1,21)[0])],
-                           matrix_list2)
+                           matrix_list3)
 
         # setup ranges for sliders, connect them
 
@@ -72,7 +69,7 @@ class MainWindow(QMainWindow):
             slider.sliderReleased.connect(
                 lambda id=str(id): self.update(id))
             label = getattr(self.ui, 'label_%d' % id)
-            label.setText(subcats2[id])
+            label.setText(subcats3[id])
 
         self.update_pc(self.v.variables)
         self.update_sliders()
@@ -136,7 +133,7 @@ class MainWindow(QMainWindow):
                 "categories": [{"name": k,
                                 "value": means[k],
                                 "subcategories":
-                                [{"name": subcats2[subcat], "value": self.v.variables[subcat]/100.0 }
+                                [{"name": subcats3[subcat], "value": self.v.variables[subcat]/100.0 }
                                  for subcat in cats[k]]}
                 for k in cats]}
 

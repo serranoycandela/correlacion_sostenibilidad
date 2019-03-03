@@ -1,1 +1,6 @@
 pytest
+PyQt5==5.11.2
+svgwrite
+matplotlib
+numpy
+pandas
