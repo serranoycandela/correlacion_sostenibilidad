@@ -1,8 +1,10 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog,QVBoxLayout, QWidget, QLabel
 from PyQt5.QtGui import QPainter, QIcon, QPixmap
-from PyQt5.QtCore import QFile, QUrl, QRect, QSize
+from PyQt5.QtCore import QFile, QUrl, QRect, QSize, QTextStream
 from PyQt5.QtCore import Qt
+
+import qdarkstyle
 
 from gui import Ui_MainWindow
 #/Applications/QGIS3.app/Contents/MacOS/bin/pyuic4 gui.ui -o gui.py
@@ -199,6 +201,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
 
     window = MainWindow()
+    app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
     window.show()
 
     sys.exit(app.exec_())
