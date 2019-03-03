@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1353</width>
-    <height>792</height>
+    <width>1366</width>
+    <height>782</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,10 +17,10 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>810</x>
+      <x>820</x>
       <y>540</y>
       <width>521</width>
-      <height>200</height>
+      <height>191</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -35,15 +35,17 @@
        <x>0</x>
        <y>0</y>
        <width>521</width>
-       <height>200</height>
+       <height>191</height>
       </rect>
      </property>
     </widget>
+    <zorder>graphicsView</zorder>
+    <zorder>introButton</zorder>
    </widget>
    <widget class="QGraphicsView" name="glyph_view">
     <property name="geometry">
      <rect>
-      <x>810</x>
+      <x>820</x>
       <y>10</y>
       <width>521</width>
       <height>521</height>
@@ -66,7 +68,7 @@
    <widget class="QLabel" name="social">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>460</y>
       <width>91</width>
       <height>101</height>
@@ -79,8 +81,8 @@
    <widget class="QLabel" name="econo">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>350</y>
+      <x>20</x>
+      <y>340</y>
       <width>71</width>
       <height>111</height>
      </rect>
@@ -92,8 +94,8 @@
    <widget class="QLabel" name="ecolo">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>90</y>
+      <x>20</x>
+      <y>100</y>
       <width>61</width>
       <height>141</height>
      </rect>
@@ -102,16 +104,16 @@
      <string>Ecológica</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>10</y>
-      <width>701</width>
-      <height>731</height>
+      <x>100</x>
+      <y>12</y>
+      <width>711</width>
+      <height>711</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout_3">
+    <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
@@ -134,6 +136,24 @@
            <width>41</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="lineWidth">
+          <number>1</number>
+         </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
          </property>
         </widget>
        </item>
@@ -175,6 +195,12 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
+         </property>
         </widget>
        </item>
        <item>
@@ -214,6 +240,12 @@
            <width>41</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
          </property>
         </widget>
        </item>
@@ -255,6 +287,12 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
+         </property>
         </widget>
        </item>
        <item>
@@ -294,6 +332,12 @@
            <width>41</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
          </property>
         </widget>
        </item>
@@ -335,6 +379,12 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
+         </property>
         </widget>
        </item>
        <item>
@@ -374,6 +424,12 @@
            <width>41</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
          </property>
         </widget>
        </item>
@@ -415,6 +471,12 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
+         </property>
         </widget>
        </item>
        <item>
@@ -455,6 +517,12 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
+         </property>
         </widget>
        </item>
        <item>
@@ -494,6 +562,12 @@
            <width>41</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
          </property>
         </widget>
        </item>
@@ -542,6 +616,12 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
+         </property>
         </widget>
        </item>
        <item>
@@ -582,6 +662,12 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
+         </property>
         </widget>
        </item>
        <item>
@@ -621,6 +707,12 @@
            <width>41</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
          </property>
         </widget>
        </item>
@@ -669,6 +761,12 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
+         </property>
         </widget>
        </item>
        <item>
@@ -709,6 +807,12 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
+         </property>
         </widget>
        </item>
        <item>
@@ -748,6 +852,12 @@
            <width>41</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
          </property>
         </widget>
        </item>
@@ -796,6 +906,12 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
+         </property>
         </widget>
        </item>
        <item>
@@ -835,6 +951,12 @@
            <width>41</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
          </property>
         </widget>
        </item>
@@ -876,6 +998,12 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
+         </property>
         </widget>
        </item>
        <item>
@@ -915,6 +1043,12 @@
            <width>41</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
          </property>
         </widget>
        </item>
@@ -956,6 +1090,12 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
+         </property>
         </widget>
        </item>
        <item>
@@ -975,18 +1115,66 @@
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="introButton">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>1</y>
+      <width>1371</width>
+      <height>761</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="inicioButton">
+    <property name="geometry">
+     <rect>
+      <x>1100</x>
+      <y>730</y>
+      <width>110</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Inicio</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="creditosButton">
+    <property name="geometry">
+     <rect>
+      <x>1210</x>
+      <y>730</y>
+      <width>110</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Créditos</string>
+    </property>
+   </widget>
+   <zorder>frame</zorder>
+   <zorder>glyph_view</zorder>
+   <zorder>gober</zorder>
+   <zorder>social</zorder>
+   <zorder>econo</zorder>
+   <zorder>ecolo</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>introButton</zorder>
+   <zorder>creditosButton</zorder>
+   <zorder>inicioButton</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1353</width>
+     <width>1366</width>
      <height>22</height>
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

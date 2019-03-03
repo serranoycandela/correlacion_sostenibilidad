@@ -1,7 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog,QVBoxLayout, QWidget, QLabel
-from PyQt5.QtGui import QPainter
-from PyQt5.QtCore import QFile, QUrl, QRect
+from PyQt5.QtGui import QPainter, QIcon, QPixmap
+from PyQt5.QtCore import QFile, QUrl, QRect, QSize
 from PyQt5.QtCore import Qt
 
 from gui import Ui_MainWindow
@@ -56,7 +56,11 @@ class MainWindow(QMainWindow):
         self.palette = LinearSegmentedColormap.from_list("semaforo", colors, N=255)
         self.v = CriteriaVector([n * 100 for n in list(np.random.rand(1,21)[0])],
                            matrix_list3)
-
+        self.n = 0
+        self.changePix()
+        self.ui.introButton.clicked.connect(self.changePix)
+        self.ui.inicioButton.clicked.connect(self.inicio)
+        self.ui.creditosButton.clicked.connect(self.creditos)
         # setup ranges for sliders, connect them
 
         for id in range(0, 21):
@@ -81,7 +85,31 @@ class MainWindow(QMainWindow):
         # self.economica = MyLabel(text="Económica",parent=self.ui.centralwidget)
         # self.economica.setGeometry(QRect(20,300,30,400))
         # self.economica.show()
+    def creditos(self):
+        self.ui.introButton.show()
+        icon = QIcon()
+        elpng = "pw4.png"
+        icon.addPixmap(QPixmap(elpng), QIcon.Normal, QIcon.Off)
 
+        self.ui.introButton.setIcon(icon)
+        self.ui.introButton.setIconSize(QSize(1300,790))
+
+    def inicio(self):
+        self.n = 0
+        self.ui.introButton.show()
+        self.changePix()
+
+    def changePix(self):
+        icon = QIcon()
+        self.n += 1
+        if self.n < 4:
+            elpng = "pw" + str(self.n) + ".png"
+            icon.addPixmap(QPixmap(elpng), QIcon.Normal, QIcon.Off)
+
+            self.ui.introButton.setIcon(icon)
+            self.ui.introButton.setIconSize(QSize(1300,790))
+        else:
+            self.ui.introButton.hide()
 
     def update_sliders(self):
         for id in range(0,21):
