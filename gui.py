@@ -30,7 +30,7 @@ class Ui_MainWindow(object):
         self.gober.setText("")
         self.gober.setObjectName("gober")
         self.social = QtWidgets.QLabel(self.centralwidget)
-        self.social.setGeometry(QtCore.QRect(4, 455, 30, 150))
+        self.social.setGeometry(QtCore.QRect(4, 445, 30, 150))
         self.social.setText("")
         self.social.setObjectName("social")
         self.econo = QtWidgets.QLabel(self.centralwidget)
