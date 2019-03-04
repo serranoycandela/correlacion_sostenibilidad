@@ -92,7 +92,7 @@ class MainWindow(QMainWindow):
         icon.addPixmap(QPixmap(elpng), QIcon.Normal, QIcon.Off)
 
         self.ui.introButton.setIcon(icon)
-        self.ui.introButton.setIconSize(QSize(1300,790))
+        self.ui.introButton.setIconSize(QSize(1366,760))
 
     def inicio(self):
         self.n = 0
@@ -107,7 +107,7 @@ class MainWindow(QMainWindow):
             icon.addPixmap(QPixmap(elpng), QIcon.Normal, QIcon.Off)
 
             self.ui.introButton.setIcon(icon)
-            self.ui.introButton.setIconSize(QSize(1300,790))
+            self.ui.introButton.setIconSize(QSize(1366,760))
         else:
             self.ui.introButton.hide()
 
