@@ -26,7 +26,7 @@ import numpy as np
 import pandas as pd
 from pandas.plotting import parallel_coordinates
 import glyph_writer as gw
-from matrices import matrix_list3, subcats3
+from matrices import matrix_list3, subcats3, abrevia3
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 #import matplotlib.pyplot as plt
 
@@ -173,7 +173,7 @@ class MainWindow(QMainWindow):
                 "categories": [{"name": k,
                                 "value": means[k],
                                 "subcategories":
-                                [{"name": subcats3[subcat], "value": self.v.variables[subcat]/100.0 }
+                                [{"name": abrevia3[subcat], "value": self.v.variables[subcat]/100.0 }
                                  for subcat in cats[k]]}
                 for k in cats]}
 
