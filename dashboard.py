@@ -3,6 +3,9 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog,QVBoxLayout, 
 from PyQt5.QtGui import QPainter, QIcon, QPixmap
 from PyQt5.QtCore import QFile, QUrl, QRect, QSize, QTextStream
 from PyQt5.QtCore import Qt
+#binaries=[
+     # ('/Library/Frameworks/Python.framework/Versions/3.6/lib/libtk8.6.dylib', 'tk'),
+     # ('/Library/Frameworks/Python.framework/Versions/3.6/lib/libtcl8.6.dylib', 'tcl')],
 
 import qdarkstyle
 
@@ -50,7 +53,14 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         layout = QVBoxLayout(self.ui.frame)
         static_canvas = FigureCanvas(Figure(figsize=(8, 3)))
-
+        ecologica_pix = QPixmap('ecologica.png')
+        self.ui.ecolo.setPixmap(ecologica_pix)
+        economica_pix = QPixmap('economica.png')
+        self.ui.econo.setPixmap(economica_pix)
+        social_pix = QPixmap('social.png')
+        self.ui.social.setPixmap(social_pix)
+        gober_pix = QPixmap('gobernanza.png')
+        self.ui.gober.setPixmap(gober_pix)
         layout.addWidget(static_canvas)
         static_canvas.figure.subplots_adjust(left=0.07, right=0.99, top=0.9, bottom=0.1)
         self._static_ax = static_canvas.figure.subplots()

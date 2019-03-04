@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1366</width>
-    <height>782</height>
+    <width>1369</width>
+    <height>861</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -39,8 +39,6 @@
       </rect>
      </property>
     </widget>
-    <zorder>graphicsView</zorder>
-    <zorder>introButton</zorder>
    </widget>
    <widget class="QGraphicsView" name="glyph_view">
     <property name="geometry">
@@ -55,62 +53,62 @@
    <widget class="QLabel" name="gober">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>580</y>
-      <width>81</width>
+      <x>4</x>
+      <y>597</y>
+      <width>30</width>
       <height>151</height>
      </rect>
     </property>
     <property name="text">
-     <string>Gobernanza</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="social">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>460</y>
-      <width>91</width>
-      <height>101</height>
+      <x>4</x>
+      <y>455</y>
+      <width>30</width>
+      <height>150</height>
      </rect>
     </property>
     <property name="text">
-     <string>Socio-cultural</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="econo">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>340</y>
-      <width>71</width>
+      <x>4</x>
+      <y>349</y>
+      <width>30</width>
       <height>111</height>
      </rect>
     </property>
     <property name="text">
-     <string>Económica</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="ecolo">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>4</x>
       <y>100</y>
-      <width>61</width>
+      <width>30</width>
       <height>141</height>
      </rect>
     </property>
     <property name="text">
-     <string>Ecológica</string>
+     <string/>
     </property>
    </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>50</x>
       <y>12</y>
-      <width>711</width>
-      <height>711</height>
+      <width>761</width>
+      <height>741</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -120,8 +118,14 @@
         <widget class="QLabel" name="label_0">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -161,8 +165,14 @@
         <widget class="QSlider" name="slider_0">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -178,8 +188,14 @@
         <widget class="QLabel" name="label_1">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -207,8 +223,14 @@
         <widget class="QSlider" name="slider_1">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -224,8 +246,14 @@
         <widget class="QLabel" name="label_2">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -253,8 +281,14 @@
         <widget class="QSlider" name="slider_2">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -270,8 +304,14 @@
         <widget class="QLabel" name="label_3">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -299,8 +339,14 @@
         <widget class="QSlider" name="slider_3">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -316,8 +362,14 @@
         <widget class="QLabel" name="label_4">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -345,8 +397,14 @@
         <widget class="QSlider" name="slider_4">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -362,8 +420,14 @@
         <widget class="QLabel" name="label_5">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -391,8 +455,14 @@
         <widget class="QSlider" name="slider_5">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -408,8 +478,14 @@
         <widget class="QLabel" name="label_6">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -437,8 +513,14 @@
         <widget class="QSlider" name="slider_6">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -454,8 +536,14 @@
         <widget class="QLabel" name="label_7">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -483,8 +571,14 @@
         <widget class="QSlider" name="slider_7">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -500,8 +594,14 @@
         <widget class="QLabel" name="label_8">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -529,8 +629,14 @@
         <widget class="QSlider" name="slider_8">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -546,8 +652,14 @@
         <widget class="QLabel" name="label_9">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -575,8 +687,14 @@
         <widget class="QSlider" name="slider_9">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -599,8 +717,14 @@
         <widget class="QLabel" name="label_10">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -628,8 +752,14 @@
         <widget class="QSlider" name="slider_10">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -645,8 +775,14 @@
         <widget class="QLabel" name="label_11">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -674,8 +810,14 @@
         <widget class="QSlider" name="slider_11">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -691,8 +833,14 @@
         <widget class="QLabel" name="label_12">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -720,8 +868,14 @@
         <widget class="QSlider" name="slider_12">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -744,8 +898,14 @@
         <widget class="QLabel" name="label_13">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -773,8 +933,14 @@
         <widget class="QSlider" name="slider_13">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -790,8 +956,14 @@
         <widget class="QLabel" name="label_14">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -819,8 +991,14 @@
         <widget class="QSlider" name="slider_14">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -836,8 +1014,14 @@
         <widget class="QLabel" name="label_15">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -865,8 +1049,14 @@
         <widget class="QSlider" name="slider_15">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -889,8 +1079,14 @@
         <widget class="QLabel" name="label_16">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -918,8 +1114,14 @@
         <widget class="QSlider" name="slider_16">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -935,8 +1137,14 @@
         <widget class="QLabel" name="label_17">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -964,8 +1172,14 @@
         <widget class="QSlider" name="slider_17">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -981,8 +1195,14 @@
         <widget class="QLabel" name="label_18">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -1010,8 +1230,14 @@
         <widget class="QSlider" name="slider_18">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -1027,8 +1253,14 @@
         <widget class="QLabel" name="label_19">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -1056,8 +1288,14 @@
         <widget class="QSlider" name="slider_19">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -1073,8 +1311,14 @@
         <widget class="QLabel" name="label_20">
          <property name="minimumSize">
           <size>
-           <width>449</width>
+           <width>540</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>540</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="text">
@@ -1102,8 +1346,14 @@
         <widget class="QSlider" name="slider_20">
          <property name="minimumSize">
           <size>
-           <width>201</width>
+           <width>140</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="orientation">
@@ -1121,7 +1371,7 @@
       <x>-1</x>
       <y>1</y>
       <width>1371</width>
-      <height>761</height>
+      <height>764</height>
      </rect>
     </property>
     <property name="text">
@@ -1154,23 +1404,13 @@
      <string>Créditos</string>
     </property>
    </widget>
-   <zorder>frame</zorder>
-   <zorder>glyph_view</zorder>
-   <zorder>gober</zorder>
-   <zorder>social</zorder>
-   <zorder>econo</zorder>
-   <zorder>ecolo</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>introButton</zorder>
-   <zorder>creditosButton</zorder>
-   <zorder>inicioButton</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1366</width>
+     <width>1369</width>
      <height>22</height>
     </rect>
    </property>
