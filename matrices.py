@@ -171,7 +171,7 @@ matrix_list2 = [[None, f('+++'), f('+'), f('+++'), f('+++'), f('+'), f('++'), f(
 [f('++'), f(0), f('+'), f(0), f(0), f(0), f(0), f(0), f(0), f('++'), f(0), f('++'), f('++'), f(0), f(0), f(0), f('+'), f('+'), None, f(0), f('+++')],
 [f('++'), f('++'), f('++'), f('++'), f('++'), f('++'), f('+'), f(0), f('++'), f('+++'), f('++'), f('+++'), f(0), f('+++'), None, f(0), f('+++'), f('+'), f(0), None, f('+++')],
 [f('+++'), f(0), f('+'), f('++'), f('+++'), f('+++'), f('+++'), f('+++'), f(0), f('+++'), f('+++'), f('++'), f('+++'), f('+++'), f('+++'), f(0), f('+++'), f('+++'), f('+++'), f('+++'), None]]
-
+#
 subcats3 = ["Ordenamiento territorial y planeación urbana sustentable A1",
 "Edificaciones sustentables (Ecotecnias, diseño y materiales sustentables) A2",
 "Industria limpia (produccion y circulacion sustentable) A3",

@@ -22,6 +22,7 @@ from matplotlib.colors import LinearSegmentedColormap
 from value_functions import discrete_factor as f
 from model import CriteriaVector
 import numpy as np
+import math
 
 import pandas as pd
 from pandas.plotting import parallel_coordinates
@@ -29,6 +30,7 @@ import glyph_writer as gw
 from matrices import matrix_list3, subcats3, abrevia3
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 #import matplotlib.pyplot as plt
+
 
 
 class MyLabel(QLabel):
@@ -51,6 +53,9 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+
+
         layout = QVBoxLayout(self.ui.frame)
         static_canvas = FigureCanvas(Figure(figsize=(8, 3)))
         ecologica_pix = QPixmap('ecologica.png')
@@ -87,13 +92,16 @@ class MainWindow(QMainWindow):
             label = getattr(self.ui, 'label_%d' % id)
             label.setText(subcats3[id])
 
-        self.update_pc(self.v.variables)
-        self.update_sliders()
+
 
         self.view = QWebEngineView(self.ui.glyph_view)
         self.view.setGeometry(0,0,520,520)
         self.update_glyph()
         self.view.show()
+
+        self.update_pc(self.v.variables)
+        self.update_sliders()
+
         # self.economica = MyLabel(text="Económica",parent=self.ui.centralwidget)
         # self.economica.setGeometry(QRect(20,300,30,400))
         # self.economica.show()
@@ -129,6 +137,19 @@ class MainWindow(QMainWindow):
             slider.setValue(self.v.variables[id])
             lcd = getattr(self.ui, 'lcdNumber_%d' % id)
             lcd.display(int(self.v.variables[id]))
+    def logistic(self, x):
+        x_0_1 = x/100.0
+        result_0_1 =  1 / (1.0 + math.exp(-10 * (x - 0.5)))
+        return result_0_1
+
+
+    def index2rgb(self, palette, index):
+        index255 = int(255.0 * self.logistic(index))
+        color_0_1 = palette(index255)
+        string_rgb = [color_0_1[0],color_0_1[1],color_0_1[2]]
+        #return string_rgb
+        print("el color es ", string_rgb)
+        return string_rgb
 
     def update_pc(self,old_values):
         # df = pd.DataFrame(self.v.variables,
@@ -140,13 +161,14 @@ class MainWindow(QMainWindow):
         xcoords = [9.5, 12.5, 15.5]
         for xc in xcoords:
             self._static_ax.axvline(x=xc, color="lightgray")
+        line_color = self.index2rgb(self.palette,self.total)
         self._static_ax.plot( range(21), old_values, "gainsboro")
-        self._static_ax.plot( range(21), self.v.variables, "green")
-        self._static_ax.text(3, 105, "Ecológica", fontsize=8)
+        self._static_ax.plot( range(21), self.v.variables, color=line_color)
+        self._static_ax.text(3, 105, "Ambiental", fontsize=8)
         self._static_ax.text(9.5, 105, "Económica", fontsize=8)
         self._static_ax.text(13, 105, "Social", fontsize=8)
         self._static_ax.text(16.5, 105, "Gobernanza", fontsize=8)
-        self._static_ax.set_ylim(bottom=0, top=100)
+        self._static_ax.set_ylim(bottom=0, top=102)
         self._static_ax.set_xticklabels([])
         self._static_ax.xaxis.set_ticks(np.arange(0, 21, 1.0))
 
@@ -158,18 +180,18 @@ class MainWindow(QMainWindow):
         #         "Socio-cultural": [14, 17, 20],
         #         "Gobernanza": [10, 13, 16, 17, 19]}
 
-        cats = {"Ecológica": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+        cats = {"Ambiental": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 "Económica": [10, 11, 12],
                 "Socio-cultural": [13, 14, 15],
                 "Gobernanza": [16, 17, 18, 19, 20]}
 
 
         means = {k:np.mean([self.v.variables[n]/100.0 for n in cats[k]]) for k in cats}
-        total = np.mean(list(means.values()))
+        self.total = np.mean(list(means.values()))
 
 
         data = {"total": {"name": "Sostenibilidad Urbana",
-                          "value": total},
+                          "value": self.total},
                 "categories": [{"name": k,
                                 "value": means[k],
                                 "subcategories":
@@ -203,8 +225,9 @@ class MainWindow(QMainWindow):
         old_value = self.v.variables[id]
         self.v.update(id, delta=(slider.value()-old_value) )
         self.update_sliders()
-        self.update_pc(old_values)
+
         self.update_glyph()
+        self.update_pc(old_values)
         print(old_value, str(slider.value()))
 
 if __name__ == "__main__":
