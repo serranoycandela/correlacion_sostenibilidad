@@ -29,24 +29,9 @@ from pandas.plotting import parallel_coordinates
 import glyph_writer as gw
 from matrices import matrix_list3, subcats3, abrevia3
 from PyQt5.QtWebEngineWidgets import QWebEngineView
+from os.path import dirname, realpath, join, abspath
 #import matplotlib.pyplot as plt
 
-
-
-class MyLabel(QLabel):
-    def __init__(self, text=None, parent=None):
-        super(self.__class__, self).__init__()
-        self.text = text
-        self.parent = parent
-
-    def paintEvent(self, event):
-        painter = QPainter(self)
-        painter.setPen(Qt.white)
-        painter.translate(20, 100)
-        painter.rotate(-90)
-        if self.text:
-            painter.drawText(0, 0, self.text)
-        painter.end()
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -92,6 +77,10 @@ class MainWindow(QMainWindow):
             label = getattr(self.ui, 'label_%d' % id)
             label.setText(subcats3[id])
 
+        try:
+            self.dirPath = dirname(abspath(__file__))
+        except NameError:  # We are the main py2exe script, not a module
+            self.dirPath = dirname(abspath(sys.argv[0]))
 
 
         self.view = QWebEngineView(self.ui.glyph_view)
@@ -102,9 +91,6 @@ class MainWindow(QMainWindow):
         self.update_pc(self.v.variables)
         self.update_sliders()
 
-        # self.economica = MyLabel(text="Económica",parent=self.ui.centralwidget)
-        # self.economica.setGeometry(QRect(20,300,30,400))
-        # self.economica.show()
     def creditos(self):
         self.ui.introButton.show()
         icon = QIcon()
@@ -146,10 +132,8 @@ class MainWindow(QMainWindow):
     def index2rgb(self, palette, index):
         index255 = int(255.0 * self.logistic(index))
         color_0_1 = palette(index255)
-        string_rgb = [color_0_1[0],color_0_1[1],color_0_1[2]]
-        #return string_rgb
-        print("el color es ", string_rgb)
-        return string_rgb
+        list_rgb = [color_0_1[0],color_0_1[1],color_0_1[2]]
+        return list_rgb
 
     def update_pc(self,old_values):
         # df = pd.DataFrame(self.v.variables,
@@ -236,5 +220,6 @@ if __name__ == "__main__":
     window = MainWindow()
     app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
     window.show()
-
+    app.setWindowIcon(QIcon(join(window.dirPath,'logo.ico')))
+    window.setWindowIcon(QIcon(join(window.dirPath,'logo.ico')))
     sys.exit(app.exec_())
