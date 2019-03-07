@@ -31,6 +31,7 @@ from matrices import matrix_list3, subcats3, abrevia3
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 from os.path import dirname, realpath, join, abspath
 #import matplotlib.pyplot as plt
+from pandas import ExcelFile
 
 
 class MainWindow(QMainWindow):
@@ -40,7 +41,8 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
 
 
-
+        self.ui.loadExcel.setEnabled(False)
+        self.ui.loadExcel.clicked.connect(self.load_excel)
         layout = QVBoxLayout(self.ui.frame)
         static_canvas = FigureCanvas(Figure(figsize=(8, 3)))
         ecologica_pix = QPixmap('ecologica.png')
@@ -91,18 +93,32 @@ class MainWindow(QMainWindow):
         self.update_pc(self.v.variables)
         self.update_sliders()
 
+    def load_excel(self):
+        esteFileChooser = QFileDialog()
+        #esteFileChooser.setFileMode(QFileDialog.Directory)
+        if esteFileChooser.exec_():
+            print(esteFileChooser.selectedFiles()[0])
+            df = pd.read_excel(esteFileChooser.selectedFiles()[0], sheetname='Sheet1')
+            self.v.variables = list(df['Valor'])
+            self.update_glyph()
+            self.update_pc(self.v.variables)
+            self.update_sliders()
+
+
+
     def creditos(self):
         self.ui.introButton.show()
         icon = QIcon()
         elpng = "pw4.png"
         icon.addPixmap(QPixmap(elpng), QIcon.Normal, QIcon.Off)
-
+        self.ui.loadExcel.setEnabled(False)
         self.ui.introButton.setIcon(icon)
         self.ui.introButton.setIconSize(QSize(1366,760))
 
     def inicio(self):
         self.n = 0
         self.ui.introButton.show()
+        self.ui.loadExcel.setEnabled(False)
         self.changePix()
 
     def changePix(self):
@@ -116,6 +132,7 @@ class MainWindow(QMainWindow):
             self.ui.introButton.setIconSize(QSize(1366,760))
         else:
             self.ui.introButton.hide()
+            self.ui.loadExcel.setEnabled(True)
 
     def update_sliders(self):
         for id in range(0,21):
