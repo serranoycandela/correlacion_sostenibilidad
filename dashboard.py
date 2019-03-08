@@ -98,7 +98,7 @@ class MainWindow(QMainWindow):
         #esteFileChooser.setFileMode(QFileDialog.Directory)
         if esteFileChooser.exec_():
             print(esteFileChooser.selectedFiles()[0])
-            df = pd.read_excel(esteFileChooser.selectedFiles()[0], sheetname='Sheet1')
+            df = pd.read_excel(esteFileChooser.selectedFiles()[0], sheet_name=0)
             self.v.variables = list(df['Valor'])
             self.update_glyph()
             self.update_pc(self.v.variables)
