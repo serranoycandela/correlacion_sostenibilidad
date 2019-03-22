@@ -42,7 +42,7 @@ class Ui_MainWindow(object):
         self.ecolo.setText("")
         self.ecolo.setObjectName("ecolo")
         self.layoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.layoutWidget.setGeometry(QtCore.QRect(50, 12, 761, 741))
+        self.layoutWidget.setGeometry(QtCore.QRect(50, 12, 761, 772))
         self.layoutWidget.setObjectName("layoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.layoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -512,7 +512,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Sostenibilidad Urbana"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Sustentabilidad Urbana"))
         self.label_0.setText(_translate("MainWindow", "TextLabel"))
         self.label_1.setText(_translate("MainWindow", "TextLabel"))
         self.label_2.setText(_translate("MainWindow", "TextLabel"))

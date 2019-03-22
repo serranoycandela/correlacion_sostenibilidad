@@ -191,7 +191,7 @@ class MainWindow(QMainWindow):
         self.total = np.mean(list(means.values()))
 
 
-        data = {"total": {"name": "Sostenibilidad Urbana",
+        data = {"total": {"name": "Sustentabilidad Urbana",
                           "value": self.total},
                 "categories": [{"name": k,
                                 "value": means[k],

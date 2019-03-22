@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Sostenibilidad Urbana</string>
+   <string>Sustentabilidad Urbana</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
@@ -108,7 +108,7 @@
       <x>50</x>
       <y>12</y>
       <width>761</width>
-      <height>741</height>
+      <height>772</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
