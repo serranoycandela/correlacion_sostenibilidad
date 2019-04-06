@@ -53,7 +53,7 @@
    <widget class="QLabel" name="gober">
     <property name="geometry">
      <rect>
-      <x>4</x>
+      <x>9</x>
       <y>597</y>
       <width>30</width>
       <height>151</height>
@@ -66,7 +66,7 @@
    <widget class="QLabel" name="social">
     <property name="geometry">
      <rect>
-      <x>4</x>
+      <x>9</x>
       <y>460</y>
       <width>30</width>
       <height>150</height>
@@ -79,7 +79,7 @@
    <widget class="QLabel" name="econo">
     <property name="geometry">
      <rect>
-      <x>4</x>
+      <x>9</x>
       <y>360</y>
       <width>30</width>
       <height>111</height>
@@ -92,7 +92,7 @@
    <widget class="QLabel" name="ecolo">
     <property name="geometry">
      <rect>
-      <x>4</x>
+      <x>9</x>
       <y>115</y>
       <width>30</width>
       <height>141</height>
