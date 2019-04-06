@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1368</width>
-    <height>791</height>
+    <height>782</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>820</x>
+      <x>840</x>
       <y>540</y>
       <width>521</width>
       <height>191</height>
@@ -43,10 +43,10 @@
    <widget class="QGraphicsView" name="glyph_view">
     <property name="geometry">
      <rect>
-      <x>820</x>
+      <x>840</x>
       <y>10</y>
       <width>521</width>
-      <height>521</height>
+      <height>491</height>
      </rect>
     </property>
    </widget>
@@ -107,7 +107,7 @@
      <rect>
       <x>50</x>
       <y>12</y>
-      <width>761</width>
+      <width>781</width>
       <height>772</height>
      </rect>
     </property>
@@ -118,13 +118,13 @@
         <widget class="QLabel" name="label_0">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -188,13 +188,13 @@
         <widget class="QLabel" name="label_1">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -246,13 +246,13 @@
         <widget class="QLabel" name="label_2">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -304,13 +304,13 @@
         <widget class="QLabel" name="label_3">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -362,13 +362,13 @@
         <widget class="QLabel" name="label_4">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -420,13 +420,13 @@
         <widget class="QLabel" name="label_5">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -478,13 +478,13 @@
         <widget class="QLabel" name="label_6">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -536,13 +536,13 @@
         <widget class="QLabel" name="label_7">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -594,13 +594,13 @@
         <widget class="QLabel" name="label_8">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -652,13 +652,13 @@
         <widget class="QLabel" name="label_9">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -717,13 +717,13 @@
         <widget class="QLabel" name="label_10">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -775,13 +775,13 @@
         <widget class="QLabel" name="label_11">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -833,13 +833,13 @@
         <widget class="QLabel" name="label_12">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -898,13 +898,13 @@
         <widget class="QLabel" name="label_13">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -956,13 +956,13 @@
         <widget class="QLabel" name="label_14">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -1014,13 +1014,13 @@
         <widget class="QLabel" name="label_15">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -1079,13 +1079,13 @@
         <widget class="QLabel" name="label_16">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -1137,13 +1137,13 @@
         <widget class="QLabel" name="label_17">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -1195,13 +1195,13 @@
         <widget class="QLabel" name="label_18">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -1253,13 +1253,13 @@
         <widget class="QLabel" name="label_19">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -1311,13 +1311,13 @@
         <widget class="QLabel" name="label_20">
          <property name="minimumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>545</width>
+           <width>565</width>
            <height>16777215</height>
           </size>
          </property>
@@ -1368,10 +1368,10 @@
    <widget class="QPushButton" name="introButton">
     <property name="geometry">
      <rect>
-      <x>-1</x>
+      <x>0</x>
       <y>1</y>
-      <width>1371</width>
-      <height>764</height>
+      <width>1368</width>
+      <height>779</height>
      </rect>
     </property>
     <property name="text">
@@ -1381,8 +1381,8 @@
    <widget class="QPushButton" name="inicioButton">
     <property name="geometry">
      <rect>
-      <x>930</x>
-      <y>730</y>
+      <x>840</x>
+      <y>733</y>
       <width>110</width>
       <height>32</height>
      </rect>
@@ -1394,8 +1394,8 @@
    <widget class="QPushButton" name="creditosButton">
     <property name="geometry">
      <rect>
-      <x>1210</x>
-      <y>730</y>
+      <x>1230</x>
+      <y>733</y>
       <width>110</width>
       <height>32</height>
      </rect>
@@ -1407,16 +1407,55 @@
    <widget class="QPushButton" name="loadExcel">
     <property name="geometry">
      <rect>
-      <x>1060</x>
-      <y>730</y>
-      <width>141</width>
+      <x>1100</x>
+      <y>733</y>
+      <width>111</width>
       <height>32</height>
      </rect>
     </property>
     <property name="text">
-     <string>Cargar Valores</string>
+     <string>Cargar</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="guardarButton">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>733</y>
+      <width>110</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Guardar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="back">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>505</y>
+      <width>51</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;&lt;</string>
+    </property>
+   </widget>
+   <zorder>back</zorder>
+   <zorder>frame</zorder>
+   <zorder>glyph_view</zorder>
+   <zorder>gober</zorder>
+   <zorder>social</zorder>
+   <zorder>econo</zorder>
+   <zorder>ecolo</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>introButton</zorder>
+   <zorder>inicioButton</zorder>
+   <zorder>creditosButton</zorder>
+   <zorder>loadExcel</zorder>
+   <zorder>guardarButton</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

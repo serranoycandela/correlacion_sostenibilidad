@@ -7,6 +7,11 @@ from PyQt5.QtCore import Qt
      # ('/Library/Frameworks/Python.framework/Versions/3.6/lib/libtk8.6.dylib', 'tk'),
      # ('/Library/Frameworks/Python.framework/Versions/3.6/lib/libtcl8.6.dylib', 'tcl')],
 
+
+# - Desplegar un diálogo o ventana emergente que de un poco más de información de a qué se
+#   refiere el componente (sólo si es fácil de programar)
+
+
 import qdarkstyle
 
 from gui import Ui_MainWindow
@@ -27,7 +32,7 @@ import math
 import pandas as pd
 from pandas.plotting import parallel_coordinates
 import glyph_writer as gw
-from matrices import matrix_list3, subcats3, abrevia3
+from matrices import matrix_list3, subcats3, abrevia3, tooltip
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 from os.path import dirname, realpath, join, abspath
 #import matplotlib.pyplot as plt
@@ -41,8 +46,13 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
 
 
-        self.ui.loadExcel.setEnabled(False)
+        self.ui.inicioButton.setEnabled(False)
+        self.ui.guardarButton.setEnabled(False)
+        self.ui.back.setEnabled(False)
         self.ui.loadExcel.clicked.connect(self.load_excel)
+        self.ui.guardarButton.clicked.connect(self.guardar)
+        self.ui.back.clicked.connect(self.de_reversa)
+
         layout = QVBoxLayout(self.ui.frame)
         static_canvas = FigureCanvas(Figure(figsize=(8, 3)))
         ecologica_pix = QPixmap('ecologica.png')
@@ -66,7 +76,6 @@ class MainWindow(QMainWindow):
         self.ui.inicioButton.clicked.connect(self.inicio)
         self.ui.creditosButton.clicked.connect(self.creditos)
         # setup ranges for sliders, connect them
-
         for id in range(0, 21):
             slider = getattr(self.ui, 'slider_%d' % id)
             slider.setMinimum(0)
@@ -77,7 +86,12 @@ class MainWindow(QMainWindow):
             slider.sliderReleased.connect(
                 lambda id=str(id): self.update(id))
             label = getattr(self.ui, 'label_%d' % id)
-            label.setText(subcats3[id])
+            titulo = subcats3[id].split(". ")
+            label.setText("<html><head/><body><font size='3'><p><b>"+titulo[0]+". </b>"+titulo[1]+"</p></font></body></html>")
+            label.setToolTip(tooltip[titulo[0]])
+            lcdNumber = getattr(self.ui, 'lcdNumber_%d' % id)
+            lcdNumber.setToolTip(tooltip[titulo[0]])
+
 
         try:
             self.dirPath = dirname(abspath(__file__))
@@ -92,6 +106,39 @@ class MainWindow(QMainWindow):
 
         self.update_pc(self.v.variables)
         self.update_sliders()
+        self.history = []
+        self.history.append(self.v.variables[:])
+
+
+
+    def de_reversa(self):
+        self.history = self.history[:-1]
+        old_values = self.v.variables[:]
+        self.v.variables = self.history[-1][:]
+        self.update_sliders()
+
+        self.update_glyph()
+        self.update_pc(old_values)
+        if len(self.history)==1:
+            self.ui.back.setEnabled(False)
+
+    def guardar(self):
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        fileName, _ = QFileDialog.getSaveFileName(self,"Guardar","","Excel Files (*.xlsx)", options=options)
+        if fileName:
+            if not fileName.endswith(".xlsx"):
+                fileName = fileName + ".xlsx"
+
+            df = pd.DataFrame({'Clave'     : abrevia3,
+                               'Criterio'  : subcats3,
+                               'Valor'     : self.v.variables
+                                })
+            new = df["Criterio"].str.split(". ", n = 1, expand = True)
+
+            df["Criterio"]= new[1]
+            df.Valor = df.Valor.round()
+            df.to_excel(fileName, sheet_name='Sheet1', index=False)
 
     def load_excel(self):
         esteFileChooser = QFileDialog()
@@ -100,10 +147,15 @@ class MainWindow(QMainWindow):
             print(esteFileChooser.selectedFiles()[0])
             df = pd.read_excel(esteFileChooser.selectedFiles()[0], sheet_name=0)
             self.v.variables = list(df['Valor'])
+            self.history = []
+            self.history.append(self.v.variables[:])
+            self.ui.back.setEnabled(False)
             self.update_glyph()
             self.update_pc(self.v.variables)
             self.update_sliders()
-
+            self.ui.introButton.hide()
+            self.ui.guardarButton.setEnabled(True)
+            self.ui.inicioButton.setEnabled(True)
 
 
     def creditos(self):
@@ -111,28 +163,33 @@ class MainWindow(QMainWindow):
         icon = QIcon()
         elpng = "pw4.png"
         icon.addPixmap(QPixmap(elpng), QIcon.Normal, QIcon.Off)
-        self.ui.loadExcel.setEnabled(False)
+        #self.ui.loadExcel.setEnabled(False)
+        self.ui.guardarButton.setEnabled(False)
+        self.ui.inicioButton.setEnabled(True)
         self.ui.introButton.setIcon(icon)
-        self.ui.introButton.setIconSize(QSize(1366,760))
+        self.ui.introButton.setIconSize(QSize(1368,779))
 
     def inicio(self):
         self.n = 0
         self.ui.introButton.show()
-        self.ui.loadExcel.setEnabled(False)
+        self.ui.inicioButton.setEnabled(False)
+        self.ui.guardarButton.setEnabled(False)
         self.changePix()
 
     def changePix(self):
         icon = QIcon()
         self.n += 1
-        if self.n < 4:
+        if self.n > 1:
+            self.ui.inicioButton.setEnabled(True)
+        if self.n < 3:
             elpng = "pw" + str(self.n) + ".png"
             icon.addPixmap(QPixmap(elpng), QIcon.Normal, QIcon.Off)
 
             self.ui.introButton.setIcon(icon)
-            self.ui.introButton.setIconSize(QSize(1366,760))
+            self.ui.introButton.setIconSize(QSize(1368,779))
         else:
             self.ui.introButton.hide()
-            self.ui.loadExcel.setEnabled(True)
+            self.ui.guardarButton.setEnabled(True)
 
     def update_sliders(self):
         for id in range(0,21):
@@ -206,6 +263,7 @@ class MainWindow(QMainWindow):
 
 
 
+
     def update_glyph(self):
         data1 = self.vector2dict()
         #print(gw.makeGlyph(800, data1, labels=True, toEnsableLabelsLater=True))
@@ -229,6 +287,9 @@ class MainWindow(QMainWindow):
 
         self.update_glyph()
         self.update_pc(old_values)
+        self.history.append(self.v.variables[:])
+        if len(self.history)==2:
+            self.ui.back.setEnabled(True)
         print(old_value, str(slider.value()))
 
 if __name__ == "__main__":
