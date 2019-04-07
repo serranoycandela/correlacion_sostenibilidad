@@ -83,11 +83,13 @@ class MainWindow(QMainWindow):
             slider.setTickInterval(5)
             slider.setSingleStep(1)
             slider.setValue(50)
-            slider.sliderReleased.connect(
-                lambda id=str(id): self.update(id))
+            slider.sliderReleased.connect(lambda id=str(id): self.update(id))
+            # slider.valueChanged.connect(
+            #     lambda value, segment=str(id): self.mepicaron(value, segment))
+
             label = getattr(self.ui, 'label_%d' % id)
             titulo = subcats3[id].split(". ")
-            label.setText("<html><head/><body><font size='3'><p><b>"+titulo[0]+". </b>"+titulo[1]+"</p></font></body></html>")
+            label.setText("<html><head/><body><font size='4'><p><b>"+titulo[0]+". </b>"+titulo[1]+"</p></font></body></html>")
             label.setToolTip(tooltip[titulo[0]])
             lcdNumber = getattr(self.ui, 'lcdNumber_%d' % id)
             lcdNumber.setToolTip(tooltip[titulo[0]])
@@ -109,6 +111,8 @@ class MainWindow(QMainWindow):
         self.history = []
         self.history.append(self.v.variables[:])
 
+    # def mepicaron(self, value, segment):
+    #     print(value,segment)
 
 
     def de_reversa(self):
@@ -141,11 +145,16 @@ class MainWindow(QMainWindow):
             df.to_excel(fileName, sheet_name='Sheet1', index=False)
 
     def load_excel(self):
-        esteFileChooser = QFileDialog()
-        #esteFileChooser.setFileMode(QFileDialog.Directory)
-        if esteFileChooser.exec_():
-            print(esteFileChooser.selectedFiles()[0])
-            df = pd.read_excel(esteFileChooser.selectedFiles()[0], sheet_name=0)
+        # esteFileChooser = QFileDialog()
+        # #esteFileChooser.setFileMode(QFileDialog.Directory)
+        # if esteFileChooser.exec_():
+
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        fileName, _ = QFileDialog.getOpenFileName(self,"Cargar","","Excel Files (*.xlsx)", options=options)
+        if fileName:
+            print(fileName)
+            df = pd.read_excel(fileName, sheet_name=0)
             self.v.variables = list(df['Valor'])
             self.history = []
             self.history.append(self.v.variables[:])
