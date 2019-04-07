@@ -98,6 +98,11 @@
       <height>141</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -1394,7 +1399,7 @@
    <widget class="QPushButton" name="creditosButton">
     <property name="geometry">
      <rect>
-      <x>1230</x>
+      <x>1240</x>
       <y>733</y>
       <width>110</width>
       <height>32</height>
@@ -1407,7 +1412,7 @@
    <widget class="QPushButton" name="loadExcel">
     <property name="geometry">
      <rect>
-      <x>1100</x>
+      <x>1110</x>
       <y>733</y>
       <width>111</width>
       <height>32</height>
@@ -1420,7 +1425,7 @@
    <widget class="QPushButton" name="guardarButton">
     <property name="geometry">
      <rect>
-      <x>970</x>
+      <x>980</x>
       <y>733</y>
       <width>110</width>
       <height>32</height>
