@@ -34,7 +34,7 @@ class Ui_MainWindow(object):
         self.social.setText("")
         self.social.setObjectName("social")
         self.econo = QtWidgets.QLabel(self.centralwidget)
-        self.econo.setGeometry(QtCore.QRect(9, 360, 30, 111))
+        self.econo.setGeometry(QtCore.QRect(9, 340, 41, 131))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.econo.setFont(font)
